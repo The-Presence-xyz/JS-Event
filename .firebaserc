@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "jsvechornytsi-e646b"
+  },
+  "targets": {
+    "jsvechornytsi-e646b": {
+      "hosting": {
+        "jsvechornytsi": [
+          "jsvechornytsi-e646b"
+        ]
+      }
+    }
+  }
+}

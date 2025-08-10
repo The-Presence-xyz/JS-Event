@@ -1,0 +1,39 @@
+:root {
+	--red-orange: #fe4835;
+	--amber: #ffc100;
+	--black-rock: #282b3b;
+	--comet: #696b76;
+	--alice-blue: #f1f4f5;
+	--mischka: #aaabaf;
+	--white: #ffffff;
+	--heading: #a4a6ae;
+}
+
+@font-face {
+	font-family: exo2Regular;
+	src: url(assets/fonts/Exo2-Regular.ttf) format("truetype");
+}
+
+@font-face {
+	font-family: exo2Bold;
+	src: url(assets/fonts/Exo2-Bold.ttf) format("truetype");
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: "exo2Regular", "arial", sans-serif;
+	z-index: 1;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+.overflow-text {
+	width: 100%;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+}

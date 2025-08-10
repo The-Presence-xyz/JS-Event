@@ -1,0 +1,121 @@
+[
+  {
+    "id": "1",
+    "firstName": "Олександр",
+    "lastName": "Бобир",
+    "avatarUrl": "assets/images/sasha_bobyr.jpg",
+    "position": "Front-End Developer",
+    "company": "Freelance, Circle Web Academy",
+    "socialNetworks": [
+      {
+        "type": "facebook",
+        "url": "https://www.facebook.com/poshtar.boba"
+      },
+      {
+        "type": "linkedin",
+        "url": "https://www.linkedin.com/in/poshtarboba"
+      }
+    ],
+    "description": "Front-End Engineer з досвідом роботи більше 12-ти років. Працював у таких компаніях, як: Fantero, Rexsoft, SoftBistro (LoomLogic) та OmniSynapse.",
+    "topicTitle": "Мій зручний Інтернет!"
+  },
+  {
+    "id": "2",
+    "firstName": "Олексій",
+    "lastName": "Заславський",
+    "avatarUrl": "assets/images/oleksiy_zaslavsky.jpg",
+    "position": "Technical Lead",
+    "company": "Webbylab",
+    "socialNetworks": [
+      {
+        "type": "facebook",
+        "url": "https://www.facebook.com/alexey.zaslavsky"
+      },
+      {
+        "type": "linkedin",
+        "url": "https://www.linkedin.com/in/alexey-zaslavsky-9346b562/"
+      }
+    ],
+    "description": "Technical Lead у Webbylab, що базується в Києві, Україна. 10-річний досвід роботи в ІТ, в тому числі 7 років у веб-розробці. Також гастролює з семінарами та лекціями про те, як освоїти React.js.",
+    "topicTitle": "Build your own React Native with Python and Gtk",
+    "topicPlan": [
+      "Introduction – a quick overview of existing React renderers (community and official).",
+      "Expanding the idea of a render – what is common between lifecycle of a DOM element and native UI elements.",
+      "Choosing native desktop UI to work with.",
+      "What features should the desktop UI framework have.",
+      "Choosing a language binding for the native side.",
+      "Designing communication protocol.",
+      "Description of the possible ways of communication between the UI and the React renderer side.",
+      "What commands should the renderer send to the native UI.",
+      "What commands should the UI send back.",
+      "Live demo with the native desktop UI built with Gtk framework on one side and React renderer on the other side."
+    ]
+  },
+  {
+    "id": "3",
+    "firstName": "Віктор",
+    "lastName": "Турський",
+    "avatarUrl": "assets/images/victor_tursky.jpg",
+    "position": "CEO",
+    "company": "WebbyLab",
+    "socialNetworks": [
+      {
+        "type": "facebook",
+        "url": "https://www.facebook.com/koorchik"
+      },
+      {
+        "type": "linkedin",
+        "url": "https://www.linkedin.com/in/turskyi"
+      }
+    ],
+    "description": "CEO та principal software architect у WebbyLab. Більше 15 років в ІТ. Успішно запустив понад 60 проектів, серед яких проекти для 5 компаній із списку Fortune 500. Досвід роботи з open source проектами та великими кодовими базами.",
+    "topicTitle": "Ефективно чік-чік й в продакшен.",
+    "topicPlan": ["?????????", "????????"]
+  },
+  {
+    "id": "4",
+    "firstName": "Ігор",
+    "lastName": "Остапчук",
+    "avatarUrl": "assets/images/ihor.jpg",
+    "position": "Front-End Developer",
+    "company": "DataRobot",
+    "socialNetworks": [
+      {
+        "type": "facebook",
+        "url": "https://www.facebook.com/im.ihor.ostapchuk"
+      },
+      {
+        "type": "linkedin",
+        "url": "https://www.linkedin.com/in/igor-ostapchuk"
+      }
+    ],
+    "description": "Починав з full-stack розробки на LAMP-стеці, CMS на фрілансі. 5 -ти річний досвід сфокусував на фронтенд розробці. Наразі працює в команді де підтримують фронтенд архітектуру основного продукту DataRobot та впроваджуємо кращі практики для продуктивності розробників і дизайнерів (дизайн система) та актуальності кодової бази в цілому.",
+    "topicTitle": "Дизайн з Figma та застосування Figma API.",
+    "topicPlan": [
+      "Що таке Figma та які проблеми вирішує Figma з переведенням дизайну в код програмістом.",
+      "Дизайн-системи, короткий лікбез.",
+      "Приклади застосування Figma API, короткий лайв-кодинг."
+    ]
+  },
+  {
+    "id": "5",
+    "firstName": "Ігор",
+    "lastName": "Качура",
+    "avatarUrl": "assets/images/ihor_kachura.jpg",
+    "position": "Front-End Developer",
+    "company": "Wix",
+    "socialNetworks": [
+      {
+        "type": "facebook",
+        "url": "https://www.facebook.com/igorkachura"
+      },
+      {
+        "type": "linkedin",
+        "url": "https://www.linkedin.com/in/igorkachura"
+      }
+    ],
+    "description": "",
+    "topicTitle": "React Native for Front-end developers",
+    "topicPlan": ["In this talk, I am going to cover how I got into React Native and made the move from React to RN. I’ll explain how React Native differs from React for the web, and what to expect when developing with React Native."]
+  }
+]

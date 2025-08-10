@@ -1,0 +1,256 @@
+<header class="header">
+	<div class="logo-wrapper" (click)="fullPageApi.moveTo(1)">
+		<img src="assets/images/jsv-logo.svg" class="logo" alt="logo"/>
+	</div>
+
+	<ul class="nav-preview" id="menu">
+		<li data-menuanchor="main" (click)="moveTo(0)">
+			<span class="progress"></span>
+		</li>
+		<li data-menuanchor="speakers" (click)="moveTo(1)">
+			<span class="progress"></span>
+		</li>
+		<li data-menuanchor="partners" (click)="moveTo(2)">
+			<span class="progress"></span>
+		</li>
+		<li data-menuanchor="registration" (click)="moveTo(3)">
+			<span class="progress"></span>
+		</li>
+		<li data-menuanchor="contacts" (click)="moveTo(4)">
+			<span class="progress"></span>
+		</li>
+	</ul>
+
+	<div class="social-block">
+		<a [attr.href]="facebookLink" class="social-icon">
+			<fa-icon [icon]="faFacebookF"></fa-icon>
+		</a>
+		<a [attr.href]="instagramLink" class="social-icon">
+			<fa-icon [icon]="faInstagram"></fa-icon>
+		</a>
+	</div>
+
+	<div class="nav-menu-button" [ngClass]="(isShowMobileNav)?'open':''">
+		<div class="menu-toggle" (click)="toggleMobileNav()">
+			<span class="line"></span>
+			<span class="line"></span>
+		</div>
+	</div>
+	<div class="mobile-nav" [ngClass]="(isShowMobileNav)?'show':'hide'">
+		<ul>
+			<li data-menuanchor="speakers" (click)="moveTo(1)">
+				<h3>Спікери</h3>
+			</li>
+			<li data-menuanchor="partners" (click)="moveTo(2)">
+				<h3>Партнери</h3>
+			</li>
+			<li data-menuanchor="registration" (click)="moveTo(3)">
+				<h3>Реєстрація</h3>
+			</li>
+			<li data-menuanchor="contacts" (click)="moveTo(4)">
+				<h3>Контакти</h3>
+			</li>
+		</ul>
+	</div>
+</header>
+
+<div fullpage id="fullpage" [options]="config" (ref)="getRef($event)">
+	<section class="section main">
+		<div class="slide">
+			<div class="main-box">
+				<h1>
+					<span>25 квітня - JS Вечорниці</span> <br /> Вечорниці повертаються - сезон JS тусовок починається
+				</h1>
+				<p>Нетворкінг, професійні кадри, однодумці, навчання та обмін досвідом компаній-партнерів.</p>
+				<app-button type="submit" (customClick)="moveToRegistration('visitor')">Реєстрація</app-button>
+			</div>
+		</div>
+
+		<!--<div class="slide-nav-wrapper white">
+			<div class="slide-progress-wrapper">
+				<span class="active">01</span>
+				<div class="slide-progress">
+					<div class="slide-progress-bar"></div>
+					<span></span>
+				</div>
+				<span>03</span>
+			</div>
+			<div class="slide-switchers">
+				<img (click)="fullPageApi.moveSlideRight()" src="assets/images/right-arrow.svg" class="slide-switcher-arrow" alt="right-arrow" />
+				<img (click)="fullPageApi.moveSlideLeft()" src="assets/images/left-arrow.svg" class="slide-switcher-arrow" alt="left-arrow" />
+			</div>
+		</div>-->
+	</section>
+	<section class="section speakers">
+		<h2 class="section-title">Speakers</h2>
+		<div class="section-content">
+			<div class="sc-left">
+				<h3 class="sc-title">Спікери</h3>
+				<p>Це люди, які рухають індустрію вперед і рік за роком доводять: програмування - це мистецтво!</p>
+			</div>
+			<div class="sc-right">
+				<swiper
+						[config]="swipeConfig"
+						class="speakers-swiper"
+						(progress)="swipeSpeakerProgress($event)"
+						(reachBeginning)="toggleSpeakerSwiperReach('beginning')"
+						(reachEnd)="toggleSpeakerSwiperReach('end')"
+				>
+                    <app-speaker *ngFor="let speaker of speakers" [speaker]="speaker"></app-speaker>
+				</swiper>
+			</div>
+		</div>
+		<div class="slide-nav-wrapper" *ngIf="speakers.length">
+			<div class="slide-progress-wrapper">
+				<span [class.active]="speakerSwiperReach === 'beginning'">01</span>
+				<div class="slide-progress">
+					<div class="slide-progress-bar" [style.width.%]="speakerSwiperProgress"></div>
+					<span></span>
+				</div>
+				<span [class.active]="speakerSwiperReach === 'end'">0{{speakers.length}}</span>
+			</div>
+			<div class="slide-switchers">
+				<img src="assets/images/right-arrow.svg" class="slide-switcher-arrow carousel-next" role="button" alt="right-arrow" />
+				<img src="assets/images/left-arrow.svg" class="slide-switcher-arrow carousel-previous" role="button" alt="left-arrow" />
+			</div>
+		</div>
+	</section>
+	<section class="section partners">
+		<h2 class="section-title white">Partners</h2>
+		<div class="section-content">
+			<div class="sc-left">
+				<h3 class="sc-title white">Партнери</h3>
+				<div class="list-wrapper">
+					<h4 class="list-title">Вигода для партнерів івенту:</h4>
+					<ul class="list">
+						<li>нетворкінг</li>
+						<li>виступ перед публікою</li>
+						<li>реклама, авторитет, статус</li>
+					</ul>
+				</div>
+				<div class="list-wrapper">
+					<h4 class="list-title">Від компанії-партнера потрібно:</h4>
+					<ul class="list">
+						<li>згода на розміщення імені та логотипу, як партнера івенту</li>
+						<li>інформація про компанію</li>
+						<li>присутність представника компанії на події</li>
+						<li>фінансування</li>
+					</ul>
+				</div>
+				<div class="section-btn-wrapper">
+					<app-button type="submit" (customClick)="moveToRegistration('partner')">Стати Партнером</app-button>
+				</div>
+			</div>
+			<div class="sc-right">
+				logos of partners.
+			</div>
+		</div>
+	</section>
+	<section class="section registration">
+		<h2 class="section-title">Registration</h2>
+		<div class="section-content">
+			<div class="sc-left">
+				<h3 class="sc-title">Реєстрація</h3>
+				<p>Заповніть форму реєстрації та почніть знайомство з цікавими людьми обговорюючи сучасні тенденції в ІТ.</p>
+			</div>
+			<div class="sc-right">
+				<form [formGroup]="registrationForm" (ngSubmit)="onSubmitRegistrationForm()">
+					<div class="form-group">
+						<input type="text" class="form-control" formControlName="firstName" placeholder="Ім'я" />
+						<div *ngIf="submittedForm && firstName.errors" class="invalid-feedback">
+							<div *ngIf="firstName.errors.required">Ім'я є обов'язковим.</div>
+							<div *ngIf="firstName.errors.maxlength">Ім'я не повинно перевищувати 30 символів.</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<input type="text" class="form-control" formControlName="lastName" placeholder="Прізвище" />
+						<div *ngIf="submittedForm && lastName.errors" class="invalid-feedback">
+							<div *ngIf="lastName.errors.required">Прізвище є обов'язковим.</div>
+							<div *ngIf="lastName.errors.maxlength">Прізвище не повинно перевищувати 30 символів.</div>
+						</div>
+					</div>
+
+					<div class="form-group">
+						<input type="email" class="form-control" formControlName="email" placeholder="Електронна пошта" />
+						<div *ngIf="submittedForm && email.errors" class="invalid-feedback">
+							<div *ngIf="email.errors.required">Електронна пошта є обов'язковою.</div>
+							<div *ngIf="email.errors.email">Електронна пошта некоректна.</div>
+						</div>
+					</div>
+
+					<div class="form-group form-group-no-validation">
+						<textarea type="text" class="form-control" formControlName="desire" placeholder="Побажання" rows="3"></textarea>
+					</div>
+					<div class="form-group">
+						<label for="acceptPolicy" class="form-check-label">
+							<input type="checkbox" class="form-check-input" formControlName="acceptPolicy" id="acceptPolicy" />
+							Ви погоджуєтеся з тим, що ми можемо передавати, обробляти і зберігати отриману від Вас інформацію.
+						</label>
+
+						<div *ngIf="submittedForm && acceptPolicy.errors" class="invalid-feedback">
+							<div *ngIf="acceptPolicy.errors.required">Згода користувача є обов'язковою.</div>
+						</div>
+					</div>
+
+					<div class="form-group form-group-center-small">
+						<app-button type="submit">Відправити</app-button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</section>
+	<section class="section">
+		<h2 class="section-title white">Contacts</h2>
+		<div class="section-content">
+			<div class="sc-left">
+				<h3 class="sc-title white">Контакти</h3>
+				<div class="contact">
+					<div class="contact-icon-wrapper">
+						<fa-icon [icon]="faPhoneVolume" class="contact-icon"></fa-icon>
+					</div>
+					<div class="contact-content">
+						<h5>Телефон</h5>
+						<a href="tel:+380932976652">+38(093)297-66-52</a>
+					</div>
+				</div>
+				<div class="contact">
+					<div class="contact-icon-wrapper">
+						<fa-icon [icon]="faEnvelope" class="contact-icon"></fa-icon>
+					</div>
+					<div class="contact-content">
+						<h5>Електронна пошта</h5>
+						<a href="mailto:jsvechornytsi@gmail.com">jsvechornytsi@gmail.com</a>
+					</div>
+				</div>
+				<div class="contact">
+					<div class="contact-icon-wrapper">
+						<fa-icon [icon]="faMapMarkerAlt" class="contact-icon"></fa-icon>
+					</div>
+					<div class="contact-content">
+						<h5>Де ми знаходимось</h5>
+						<p>Хмельницький, вул. Проскурівського-підпілля, 61</p>
+					</div>
+				</div>
+			</div>
+			<div class="sc-right map-wrapper">
+				<div id="leaflet-map"></div>
+			</div>
+		</div>
+	</section>
+	<footer class="footer">
+		<a [attr.href]="facebookLink" class="social-icon">
+			<fa-icon [icon]="faFacebookF"></fa-icon>
+		</a>
+		<a [attr.href]="instagramLink" class="social-icon">
+			<fa-icon [icon]="faInstagram"></fa-icon>
+		</a>
+	</footer>
+</div>
+
+<app-modal id="registration-success" delay="3000">
+	<div class="registration-success-content">
+		<fa-icon [icon]="faCheckCircle"></fa-icon>
+		<h3>Ви успішно зареєструвалися!</h3>
+	</div>
+</app-modal>

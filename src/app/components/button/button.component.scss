@@ -1,0 +1,43 @@
+@import "src/assets/styles/grid";
+
+:host {
+	display: inline-block;
+	max-width: 260px;
+	width: 100%;
+}
+
+.btn {
+	width: 100%;
+	height: 60px;
+	border: none;
+	outline: none;
+	text-transform: uppercase;
+	font-size: 16px;
+	font-weight: 700;
+	cursor: pointer;
+	transition: all .3s ease;
+
+	@include screen-max-extra-small {
+		height: 45px;
+	}
+
+	&-primary {
+		background-color: var(--red-orange);
+		color: var(--white);
+
+		&:hover {
+			background-color: var(--amber);
+		}
+	}
+	&-secondary {
+		// need to test
+		border: 1px solid var(--red-orange);
+		background-color: var(--white);
+		color: var(--red-orange);
+
+		&:hover {
+			background-color: var(--red-orange);
+			color: var(--white);
+		}
+	}
+}

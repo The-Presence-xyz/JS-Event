@@ -1,0 +1,19 @@
+:host {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	height: 100vh;
+	background-color: var(--black-rock);
+
+	h1 {
+		font-weight: bold;
+		color: var(--amber);
+	}
+
+	h2 {
+		color: var(--red-orange);
+		text-transform: uppercase;
+	}
+
+}

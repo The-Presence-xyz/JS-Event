@@ -1,0 +1,18 @@
+:host {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	height: 100vh;
+	background-color: var(--black-rock);
+
+	h1 {
+		font-weight: bold;
+		color: var(--white);
+	}
+
+	p {
+		color: var(--white);
+	}
+
+}

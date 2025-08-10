@@ -1,0 +1,212 @@
+@import "src/assets/styles/grid";
+
+:host {
+	display: flex;
+	padding: 4px 10px;
+
+	@include screen-max-extra-small {
+		justify-content: center;
+	}
+}
+
+.speaker {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	max-width: 290px;
+	width: 100%;
+	padding: 40px 30px;
+	background-color: var(--white);
+	border-radius: 4px;
+
+	&-avatar {
+		width: 143px;
+		min-width: 143px;
+		height: 143px;
+		border-radius: 50%;
+		overflow: hidden;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	&-info {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+		padding: 16px 0 10px;
+
+		h4,
+		p,
+		span {
+			margin-bottom: 8px;
+			text-align: center;
+		}
+
+		h4 {
+			font-family: "exo2Bold", sans-serif;
+			font-size: 16px;
+			color: var(--black-rock);
+		}
+
+		p {
+			font-size: 14px;
+			color: var(--black-rock);
+		}
+	}
+
+	.divider {
+		width: 30px;
+		height: 2px;
+		background-color: var(--black-rock);
+	}
+}
+/* @ modal speaker */
+.speaker-modal {
+	color: var(--black-rock);
+
+	&-top {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: wrap;
+		padding: 14px 0 20px;
+		border-bottom: 1px solid var(--mischka);
+
+		.smt-personal {
+			display: flex;
+			align-items: center;
+
+			.smt-avatar {
+				width: 143px;
+				min-width: 143px;
+				height: 143px;
+				border-radius: 50%;
+				overflow: hidden;
+
+				img {
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+				}
+			}
+
+			.smt-info {
+				margin-left: 16px;
+				font-size: 14px;
+				line-height: 22px;
+
+				h4 {
+					position: relative;
+					margin-bottom: 8px;
+					padding-bottom: 8px;
+					font-size: 16px;
+					font-weight: bold;
+					text-transform: uppercase;
+
+					&:after {
+						content: "";
+						position: absolute;
+						bottom: 0;
+						display: block;
+						width: 30px;
+						height: 2px;
+						background-color: var(--black-rock);
+					}
+				}
+			}
+		}
+	}
+
+	&-middle {
+		padding: 22px 0;
+		font-size: 14px;
+		line-height: 20px;
+	}
+
+	&-bottom {
+		display: flex;
+		font-size: 14px;
+
+		@include screen-max-extra-small {
+			flex-direction: column;
+		}
+
+		& > div {
+			width: 50%;
+			padding-right: 16px;
+			line-height: 20px;
+
+			&:last-child {
+				padding-right: 0;
+			}
+
+			@include screen-max-extra-small {
+				width: 100%;
+				padding-right: 0;
+			}
+
+			h5 {
+				margin-bottom: 10px;
+				font-family: exo2Bold, serif;
+				font-size: 14px;
+			}
+		}
+	}
+
+	.speaker-modal-list {
+		list-style: none;
+		text-align: left;
+
+		li {
+			position: relative;
+			padding-left: 16px;
+			text-transform: lowercase;
+			font-size: 14px;
+			line-height: 20px;
+
+			&:before {
+				content: "\2022";
+				position: absolute;
+				left: 0;
+				display: inline-block;
+				width: 16px;
+				color: var(--amber);
+				font-weight: bold;
+			}
+		}
+	}
+
+	.smt-socials {
+		display: flex;
+		padding-top: 10px;
+
+		.smt-social {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 45px;
+			height: 45px;
+			margin-left: 10px;
+			background-color: var(--amber);
+			border-radius: 50%;
+			transition: all .3s ease;
+
+			&:first-child {
+				margin-left: 0;
+			}
+			&:hover {
+				background-color: var(--black-rock);
+			}
+
+			.ng-fa-icon {
+				color: var(--white);
+			}
+		}
+	}
+}
+/* /@ modal speaker */

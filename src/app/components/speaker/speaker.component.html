@@ -1,0 +1,49 @@
+<div class="speaker">
+	<div class="speaker-avatar">
+		<img src="{{speaker.avatarUrl}}" alt="avatar of speaker">
+	</div>
+	<div class="speaker-info">
+		<h4>{{speaker.firstName}} {{speaker.lastName}}</h4>
+		<span class="divider"></span>
+		<p class="overflow-text">{{speaker.position}}</p>
+		<p class="overflow-text">Компанія: {{speaker.company}}</p>
+	</div>
+	<app-button buttonType="secondary" (customClick)="openModal('speaker-' + speaker.id)">Детальніше</app-button>
+</div>
+
+<app-modal id="{{'speaker-' + speaker.id}}">
+	<div class="speaker-modal">
+		<section class="speaker-modal-top">
+			<div class="smt-personal">
+				<div class="smt-avatar">
+					<img src="{{speaker.avatarUrl}}" alt="avatar of speaker">
+				</div>
+				<div class="smt-info">
+					<h4>{{speaker.firstName}} {{speaker.lastName}}</h4>
+					<p>{{speaker.position}}</p>
+					<p>Компанія: {{speaker.company}}</p>
+				</div>
+			</div>
+			<div class="smt-socials" *ngIf="speaker.socialNetworks.length">
+				<a *ngFor="let sn of speaker.socialNetworks" href="{{sn.url}}" (click)="openInNewTab(sn.url)" class="smt-social">
+					<fa-icon [icon]="getIcon(sn.type)"></fa-icon>
+				</a>
+			</div>
+		</section>
+		<section class="speaker-modal-middle">
+			{{speaker.description}}
+		</section>
+		<section class="speaker-modal-bottom">
+			<div>
+				<h5>Назва доповіді</h5>
+				<p>{{speaker.topicTitle}}</p>
+			</div>
+			<div *ngIf="speaker.topicPlan && speaker.topicPlan.length">
+				<h5>План доповіді</h5>
+				<ul class="speaker-modal-list">
+					<li *ngFor="let plan of speaker.topicPlan">{{plan}}</li>
+				</ul>
+			</div>
+		</section>
+	</div>
+</app-modal>
